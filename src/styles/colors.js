@@ -9,7 +9,8 @@ export default {
   primary: '#9d6aed',
   second: '#68cbd7',
   third: '#ffbb01',
-
+  fourth: '#463389',
+  five: '#287BB1',
   secundary: '#444A5A',
   default_gray: '#E8E8E8',
   default_border: '#707070',
