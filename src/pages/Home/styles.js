@@ -6,12 +6,14 @@ export const Container = styled.View`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const TitlePage = styled.Text`
   font-size: 20;
   font-weight: bold;
   margin-top: 10px;
+  text-align: center;
 `;
 
 export const BoxChoice = styled.TouchableOpacity`

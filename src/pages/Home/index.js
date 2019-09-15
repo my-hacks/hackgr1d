@@ -18,23 +18,33 @@ export class Home extends Component {
     return (
       <>
         <Container>
-          <TitlePage>Escolha seu Seguro</TitlePage>
+          <TitlePage style={{textAlign: 'center'}}>
+            Escolha seu Seguro
+          </TitlePage>
           <BoxChoice onPress={() => navigation.navigate('DetailsCar')}>
-            <Icon name="car" size={30} color="blue" />
+            <Icon name="car" size={30} color="#9d6aed" />
             <TitleBox>Automovel</TitleBox>
           </BoxChoice>
 
           <BoxChoice>
-            <Icon name="home" size={30} color="blue" />
+            <Icon name="home" size={30} color="#287BB1" />
             <TitleBox>Residencia</TitleBox>
           </BoxChoice>
           <BoxChoice onPress={() => navigation.navigate('Family')}>
-            <Icon name="group" size={30} color="blue" />
+            <Icon name="group" size={30} color="#ffbb01" />
             <TitleBox>Familiar</TitleBox>
           </BoxChoice>
           <BoxChoice>
-            <Icon name="paw" size={30} color="blue" />
+            <Icon name="paw" size={30} color="#E37a7a" />
             <TitleBox>Pet</TitleBox>
+          </BoxChoice>
+          <BoxChoice onPress={() => navigation.navigate('Family')}>
+            <Icon name="cellphone" size={30} color="#9dca83" />
+            <TitleBox>Eletronicos</TitleBox>
+          </BoxChoice>
+          <BoxChoice>
+            <Icon name="health" size={30} color="#7A7A7A" />
+            <TitleBox>Saude</TitleBox>
           </BoxChoice>
         </Container>
       </>

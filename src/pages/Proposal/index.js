@@ -25,6 +25,13 @@ const styles = StyleSheet.create({
   },
 });
 
+sendSMS = () => {
+  async () => {
+    const response = await api.get(
+      'https://hacka-gr1d-api.herokuapp.com/sms/' + '5511950005586/novaProposta'
+    );
+}
+
 export class Proposal extends Component {
   render() {
     return (
@@ -41,7 +48,7 @@ export class Proposal extends Component {
             <TextProposals>* BATIDAS GRAVES</TextProposals>
           </LeftSide>
           <RightSide>
-            <ButtonFinalProposal>
+            <ButtonFinalProposal onPress={()=> this.sendSMS()}>
               <Text
                 style={{
                   color: '#FFF',

@@ -75,6 +75,7 @@ export class DetailsCar extends Component {
               borderWidth: 1,
               borderRadius: 5,
               padding: 10,
+              textTransform: 'uppercase',
             }}
           />
           <ButtonSendProposal onPress={this.requestBoard}>
