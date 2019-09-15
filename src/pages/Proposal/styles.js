@@ -42,5 +42,6 @@ export const ButtonFinalProposal = styled.TouchableOpacity`
   width: 150px;
   align-items: center;
   justify-content: center;
-  background-color: ${colors.fourth};
+  background-color: #e52139;
+  border-radius: 5px;
 `;
