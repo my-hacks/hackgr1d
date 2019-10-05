@@ -24,33 +24,32 @@ export class DetailsCar extends Component {
       loading: false,
       value: 200,
       showCard: false,
+      dadosUsuario: {},
     };
   }
 
-  requestBoard = async () => {
-    this.setState(
-      {
-        loading: !this.state.loading,
-      },
-      async () => {
-        const response = await api.get(
-          'https://hacka-gr1d-api.herokuapp.com/search_by_board/' +
-            this.state.placa_carro,
-        );
+  fnShowCard() {
+    this.setState({
+      loading: !this.state.loading,
+      showCard: !this.state.showCard,
+    });
+  }
 
-        this.setState({
+  requestBoard = () => {
+    setTimeout(() => {
+      this.setState(
+        {
           loading: !this.state.loading,
-          placa_carro: '',
-          showCard: !this.state.showCard,
-        });
-
-        console.log(response.data);
-      },
-    );
+        },
+        () => {
+          this.fnShowCard();
+        },
+      );
+    }, 5000);
   };
 
   render() {
-    const {placa_carro, showCard, loading} = this.state;
+    const {placa_carro, showCard, loading, dadosUsuario} = this.state;
     const {navigation} = this.props;
     return (
       <Container>
@@ -75,7 +74,6 @@ export class DetailsCar extends Component {
               borderWidth: 1,
               borderRadius: 5,
               padding: 10,
-              textTransform: 'uppercase',
             }}
           />
           <ButtonSendProposal onPress={this.requestBoard}>
@@ -106,7 +104,7 @@ export class DetailsCar extends Component {
             <Text>Value: {this.state.value}</Text>
           </View>
           <ButtonSend onPress={() => navigation.navigate('Proposal')}>
-            <Text style={{color: '#FFF'}}>ENVIAR PROPOSTA</Text>
+            <Text style={{color: '#FFF'}}>PROXIMA ETAPA</Text>
           </ButtonSend>
         </ScrollView>
       </Container>

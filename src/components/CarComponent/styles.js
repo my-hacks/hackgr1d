@@ -23,6 +23,7 @@ export const TextFirstLine = styled.Text`
   font-size: 14;
   font-weight: bold;
   margin-left: 10px;
+  text-align: left;
 `;
 
 export const SecondLine = styled.View`

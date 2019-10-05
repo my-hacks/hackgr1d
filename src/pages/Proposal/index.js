@@ -11,6 +11,7 @@ import {
   RightSide,
 } from './styles';
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
+import api from '../../services/api';
 
 const styles = StyleSheet.create({
   container: {
@@ -25,12 +26,17 @@ const styles = StyleSheet.create({
   },
 });
 
-sendSMS = () => {
-  async () => {
-    const response = await api.get(
-      'https://hacka-gr1d-api.herokuapp.com/sms/' + '5511950005586/novaProposta'
-    );
-}
+const sendSMS = async () => {
+  const phoneNumber = '5511950005586';
+  const message = 'Novo proposta de seguros para analise';
+
+  // const url = `https://hacka-gr1d-api.herokuapp.com/sms/${phoneNumber}/${message}`;
+  const url = `http://node-express-env.aiwiqxrv4w.sa-east-1.elasticbeanstalk.com/users/sms/${phoneNumber}/${message}`;
+
+  const response = await api.get(url);
+
+  console.log('SMS Response', response);
+};
 
 export class Proposal extends Component {
   render() {
@@ -41,14 +47,14 @@ export class Proposal extends Component {
             <TitleProposal>Resumo da Proposta</TitleProposal>
             <TextProposals>Seguro Veicular</TextProposals>
             <TextProposals>Carro: F-PACE 2019</TextProposals>
-            <TextProposals>Media de Mercado: 182.000</TextProposals>
+            <TextProposals>Valor Mercado: 182.000</TextProposals>
             <TextProposals>Cobertura para:</TextProposals>
             <TextProposals>* ANTI-FURTO</TextProposals>
             <TextProposals>* DESASTRE NATURAL</TextProposals>
             <TextProposals>* BATIDAS GRAVES</TextProposals>
           </LeftSide>
           <RightSide>
-            <ButtonFinalProposal onPress={()=> this.sendSMS()}>
+            <ButtonFinalProposal onPress={this.sendSMS}>
               <Text
                 style={{
                   color: '#FFF',
