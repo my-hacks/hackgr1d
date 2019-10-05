@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {Text, View, TouchableOpacity} from 'react-native';
+import {Text, View, TouchableOpacity, ScrollView} from 'react-native';
 import {Container, BoxChoice, TitleBox, TitlePage} from './styles';
 import Icon from 'react-native-vector-icons/FontAwesome';
+
 Icon.loadFont();
 
 export class Home extends Component {
@@ -21,6 +22,7 @@ export class Home extends Component {
           <TitlePage style={{textAlign: 'center'}}>
             Escolha seu Seguro
           </TitlePage>
+          <ScrollView showsVerticalScrollIndicator={false} />
           <BoxChoice onPress={() => navigation.navigate('DetailsCar')}>
             <Icon name="car" size={30} color="#9d6aed" />
             <TitleBox>Automovel</TitleBox>
@@ -38,13 +40,21 @@ export class Home extends Component {
             <Icon name="paw" size={30} color="#E37a7a" />
             <TitleBox>Pet</TitleBox>
           </BoxChoice>
-          <BoxChoice onPress={() => navigation.navigate('Family')}>
-            <Icon name="cellphone" size={30} color="#9dca83" />
+          <BoxChoice>
+            <Icon name="laptop" size={30} color="#9dca83" />
             <TitleBox>Eletronicos</TitleBox>
           </BoxChoice>
           <BoxChoice>
-            <Icon name="health" size={30} color="#7A7A7A" />
+            <Icon name="plus-square" size={30} color="red" />
             <TitleBox>Saude</TitleBox>
+          </BoxChoice>
+          <BoxChoice>
+            <Icon name="plane" size={30} color="pink" />
+            <TitleBox>Viagens</TitleBox>
+          </BoxChoice>
+          <BoxChoice>
+            <Icon name="money" size={30} color="black" />
+            <TitleBox>Previdencia</TitleBox>
           </BoxChoice>
         </Container>
       </>
