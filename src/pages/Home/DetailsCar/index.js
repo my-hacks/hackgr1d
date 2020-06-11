@@ -23,7 +23,7 @@ export class DetailsCar extends Component {
       placa_carro: '',
       loading: false,
       value: 200,
-      showCard: false,
+      showCard: false,6
       dadosUsuario: {},
     };
   }
